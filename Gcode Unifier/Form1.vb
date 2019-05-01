@@ -115,7 +115,7 @@ Public Class Form1
                     Select Case firstletter
                         Case "G"
                             If (parts(0).Substring(1) = "36") Then
-                                row.Cells.Item(0).Value = "Retool to " + parts(1)
+                                row.Cells.Item(0).Value = line + "; Retool to " + line.Substring(4)
                             ElseIf (parts(0).Substring(1) = "21") Then
                                 row.Cells.Item(0).Value = line
                             ElseIf (parts(0).Substring(1) = "90") Then
