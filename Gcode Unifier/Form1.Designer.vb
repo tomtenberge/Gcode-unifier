@@ -24,7 +24,6 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.progressor1 = New System.Windows.Forms.ToolStripProgressBar()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -47,7 +46,7 @@ Partial Class Form1
         Me.G_R = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.G_F = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.progressor1 = New System.Windows.Forms.ToolStripProgressBar()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.Databox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,11 +60,6 @@ Partial Class Form1
         Me.StatusStrip1.Size = New System.Drawing.Size(850, 22)
         Me.StatusStrip1.TabIndex = 0
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'progressor1
-        '
-        Me.progressor1.Name = "progressor1"
-        Me.progressor1.Size = New System.Drawing.Size(100, 16)
         '
         'MenuStrip1
         '
@@ -206,6 +200,11 @@ Partial Class Form1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'progressor1
+        '
+        Me.progressor1.Name = "progressor1"
+        Me.progressor1.Size = New System.Drawing.Size(100, 16)
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -253,5 +252,4 @@ Partial Class Form1
     Friend WithEvents G_F As DataGridViewTextBoxColumn
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents progressor1 As ToolStripProgressBar
-    Friend WithEvents SaveFileDialog1 As SaveFileDialog
 End Class
