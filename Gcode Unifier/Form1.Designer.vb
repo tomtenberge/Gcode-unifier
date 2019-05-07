@@ -24,6 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.progressor1 = New System.Windows.Forms.ToolStripProgressBar()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -46,7 +47,8 @@ Partial Class Form1
         Me.G_R = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.G_F = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.progressor1 = New System.Windows.Forms.ToolStripProgressBar()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.Databox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,12 +56,17 @@ Partial Class Form1
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.progressor1})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.progressor1, Me.ToolStripStatusLabel1})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 470)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(850, 22)
         Me.StatusStrip1.TabIndex = 0
         Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'progressor1
+        '
+        Me.progressor1.Name = "progressor1"
+        Me.progressor1.Size = New System.Drawing.Size(100, 16)
         '
         'MenuStrip1
         '
@@ -200,10 +207,11 @@ Partial Class Form1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'progressor1
+        'ToolStripStatusLabel1
         '
-        Me.progressor1.Name = "progressor1"
-        Me.progressor1.Size = New System.Drawing.Size(100, 16)
+        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(24, 17)
+        Me.ToolStripStatusLabel1.Text = "0/0"
         '
         'Form1
         '
@@ -252,4 +260,6 @@ Partial Class Form1
     Friend WithEvents G_F As DataGridViewTextBoxColumn
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents progressor1 As ToolStripProgressBar
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
 End Class
