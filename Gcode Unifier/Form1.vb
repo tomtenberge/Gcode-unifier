@@ -2,6 +2,7 @@
 
 Public Class Form1
     Private isclosing As Boolean = False
+    Private supported_filetypes As String = "gcode files (*.gcode)|*.gcode|Eagle gcode file (*.ncd)|*.ncd|General gcode file (*.nc)|*.nc|All files (*.*)|*.*"
     Public x_offset As Double
     Public y_offset As Double
     Public z_offset As Double
@@ -87,16 +88,14 @@ Public Class Form1
         OpenFileDialog1.DefaultExt = "gcode"
         OpenFileDialog1.Multiselect = False
         OpenFileDialog1.Title = "Please select Gcode File"
-        OpenFileDialog1.Filter = "gcode files (*.gcode)|*.gcode|Eagle gcode file (*.ncd)|*.ncd|All files (*.*)|*.*"
+        OpenFileDialog1.Filter = supported_filetypes
         OpenFileDialog1.ShowDialog()
-        ''If OpenFileDialog1.
-        ''Exit Then Sub
-
+        If OpenFileDialog1.FileName = Nothing Then
+            Exit Sub
+        End If
         progressor1.Minimum = 0
         progressor1.Value = 0
-
         progressor1.Maximum = System.IO.File.ReadAllLines(OpenFileDialog1.FileName).Length
-
         Dim files As IO.TextReader = New IO.StreamReader(OpenFileDialog1.FileName)
         Dim line As String
         Databox1.Rows.Clear()
@@ -192,7 +191,7 @@ Public Class Form1
         SaveFileDialog1.CheckPathExists = True
         SaveFileDialog1.DefaultExt = "gcode"
         SaveFileDialog1.Title = "Please enter Gcode File to save to"
-        SaveFileDialog1.Filter = "gcode files (*.gcode)|*.gcode|Eagle gcode file (*.ncd)|*.ncd|All files (*.*)|*.*"
+        SaveFileDialog1.Filter = supported_filetypes
         SaveFileDialog1.ShowDialog()
         progressor1.Minimum = 0
         progressor1.Value = 0
